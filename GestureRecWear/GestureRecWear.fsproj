@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{F2A71F9B-5D33-465A-A702-920D77279786}</ProjectTypeGuids>
+    <ProjectGuid>{77845043-589B-4915-963C-A62DC7416304}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>GestureRecWear</RootNamespace>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.designer.fs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AssemblyName>GestureRecWear</AssemblyName>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <TargetFrameworkVersion>v4.4.87</TargetFrameworkVersion>
+    <JavaMaximumHeapSize>768m</JavaMaximumHeapSize>
+    <SelectedDevice>Sony SmartWatch 3</SelectedDevice>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <Tailcalls>false</Tailcalls>
+    <PlatformTarget>
+    </PlatformTarget>
+    <ConsolePause>false</ConsolePause>
+    <AndroidLinkMode>None</AndroidLinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <Tailcalls>true</Tailcalls>
+    <ConsolePause>false</ConsolePause>
+    <PlatformTarget>
+    </PlatformTarget>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <DefineConstants>
+    </DefineConstants>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.FSharp.targets" />
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <Compile Include="Resources\Resource.designer.fs" />
+    <AndroidResource Include="Resources\drawable\Icon.png" />
+    <AndroidResource Include="Resources\drawable\wl_circle.xml" />
+    <AndroidResource Include="Resources\drawable\service_off.png" />
+    <AndroidResource Include="Resources\drawable\service_on.png" />
+    <AndroidResource Include="Resources\drawable\service_starting.png" />
+    <AndroidResource Include="Resources\values\Strings.xml" />
+    <AndroidResource Include="Resources\values\colors.xml" />
+    <AndroidResource Include="Resources\values\dimens.xml" />
+    <AndroidResource Include="Resources\layout\ActionButton.xml" />
+    <AndroidResource Include="Resources\layout\Pager.xml" />
+    <AndroidResource Include="Resources\layout\Main.axml" />
+    <AndroidResource Include="Resources\layout\FileList.xml" />
+    <AndroidResource Include="Resources\layout\ListItemImageText.xml" />
+    <AndroidResource Include="Resources\layout\ListItemText.axml" />
+    <AndroidResource Include="Resources\layout\Confirmation.axml" />
+    <AndroidResource Include="Resources\layout\ListItem.xml" />
+    <AndroidResource Include="Resources\xml\file_paths.xml" />
+    <Compile Include="Properties\AssemblyInfo.fs" />
+    <None Include="Properties\AndroidManifest.xml" />
+    <Compile Include="Extensions.fs" />
+    <None Include="packages.config" />
+    <None Include="Design.txt" />
+    <Compile Include="AndroidExtensions.fs" />
+    <Compile Include="GmsExtensions.fs" />
+    <Compile Include="GlobalState.fs" />
+    <Compile Include="Constants.fs" />
+    <Compile Include="Observable.fs" />
+    <Compile Include="FSM.fs" />
+    <Compile Include="Recognition.fs" />
+    <Compile Include="Gestures\Twist.fs" />
+    <Compile Include="Gestures\Escape.fs" />
+    <Compile Include="Gestures\Tap.fs" />
+    <Compile Include="Gestures\Tap2.fs" />
+    <Compile Include="Gestures\Swipe.fs" />
+    <Compile Include="Gestures\Left_Right.fs" />
+    <Compile Include="Gestures\PreTap.fs" />
+    <Compile Include="Gestures\PreSwipe.fs" />
+    <Compile Include="Gestures\Navigation.fs" />
+    <Compile Include="SensorTest\SensorTest.fs" />
+    <Compile Include="HSM.fs" />
+    <Compile Include="WearSensorService.fs" />
+    <Compile Include="MainActivity.fs" />
+    <AndroidAsset Include="Assets\AboutAssets.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="mscorlib" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="Xamarin.Android.Wearable">
+      <HintPath>..\packages\Xamarin.Android.Wear.1.1.0.2\lib\MonoAndroid44\Xamarin.Android.Wearable.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Core" />
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>..\packages\Xamarin.Android.Support.v4.22.0.0.0\lib\MonoAndroid10\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.RecyclerView">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.RecyclerView.22.0.0.0\lib\MonoAndroid403\Xamarin.Android.Support.v7.RecyclerView.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

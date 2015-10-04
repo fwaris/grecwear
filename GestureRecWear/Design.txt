@@ -1,0 +1,24 @@
+﻿- state machines subscribe to obs
+- some event is detected (e.g. initial twist)
+-- state machines are hooked and unhooked
+-- sensor registration is added removed
+
+how to structure the flow?
+can the entire model be composed as a single structure?
+
+have a DU for events, e.g. Twist | Escape | Right | Left
+sm emit events and transitioning happens
+
+but there are hierarchical and parallel sm
+
+lets start with 2-level sm
+- 1st level is macro, initial - tracking (in parallel) - end
+- 2nd level is sms that generate events (applicable to 1st level)
+
+example flow
+
+Initial -> <Twist> -> Tracking -> <Escape> -> Initial
+
+Initial -> <Twist> -> Tracking -> <Right> -> Tracking -> <Escape> -> Initial
+
+
